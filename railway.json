@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "name": "backend",
+      "root": "docky/backend",
+      "build": "pip install -r requirements.txt",
+      "start": "gunicorn app:app"
+    },
+    {
+      "name": "frontend",
+      "root": "docky/docky-app",
+      "build": "npm install && npm run build",
+      "start": "npx serve -s build"
+    }
+  ]
+} 
